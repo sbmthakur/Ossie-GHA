@@ -1,1 +1,1 @@
-# Example demonstrating OSSIBOT GitHub Actions plugin
+# OSSIBOT GitHub Actions plugin to audit dependecies
