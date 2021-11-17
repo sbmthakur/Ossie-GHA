@@ -1,0 +1,34 @@
+# This is a basic workflow to help you get started with Actions
+
+name: OSSIBOT Audit
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+jobs:
+  
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Install pipreqs
+      - name: install pipreqs
+        run: pip3 install pipreq
+ 
+      # Install OssiBOT
+      - name: install ossibot client
+        run: pip3 install ossibot
+        
+      # Audit the Repository
+      - name: Audit project dependencies
+        run: ossibot audit --id ${{ secrets.OSSIBOT_ID }} --project ${{ github.repository }}
