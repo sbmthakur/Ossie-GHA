@@ -12,10 +12,6 @@ on:
   workflow_dispatch:
   
   workflow_call:
-    inputs:
-      REPO_PATH:
-        type: string
-        required: true
     secrets:
       OSSIEBOT_ID:
         required: true
@@ -35,4 +31,4 @@ jobs:
         
       # Audit the Repository
       - name: Audit project dependencies
-        run: ossie audit --id ${{ secrets.OSSIEBOT_ID }} --project ${{ inputs.REPO_PATH }}
+        run: ossie audit --id ${{ secrets.OSSIEBOT_ID }} --project ${{ github.workspace }}
