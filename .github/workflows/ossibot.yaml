@@ -16,4 +16,4 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   call-ossibot:
-    uses: ossillate-inc/Ossie-GHA/.github/workflows/action.yaml@main
+    uses: ossillate-inc/Ossie-GHA/.github/workflows/action.yaml
