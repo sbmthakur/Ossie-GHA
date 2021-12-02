@@ -27,4 +27,4 @@ jobs:
         
       # Audit the Repository
       - name: Audit project dependencies
-        run: ossie audit --id ${{ secrets.OSSIBOT_ID }} --project ${{ github.repository }}
+        run: ossie audit --id ${{ secrets.OSSIEBOT_ID }} --project ${{ github.repository }}
