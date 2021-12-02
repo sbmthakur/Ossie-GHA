@@ -20,15 +20,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Install pipreqs
-      - name: install pipreqs
-        run: pip3 install pipreq
  
       # Install OssiBOT
-      - name: install ossibot client
-        run: pip3 install ossibot
+      - name: install ossie bot client
+        run: pip3 install ossie
         
       # Audit the Repository
       - name: Audit project dependencies
-        run: ossibot audit --id ${{ secrets.OSSIBOT_ID }} --project ${{ github.repository }}
+        run: ossie audit --id ${{ secrets.OSSIBOT_ID }} --project ${{ github.repository }}
