@@ -13,7 +13,7 @@ on:
   
   workflow_call:
     inputs:
-      repo_path:
+      REPO_PATH:
         type: string
         required: true
     secrets:
@@ -35,4 +35,4 @@ jobs:
         
       # Audit the Repository
       - name: Audit project dependencies
-        run: ossie audit --id ${{ secrets.OSSIEBOT_ID }} --project ${{ repo_path }}
+        run: ossie audit --id ${{ secrets.OSSIEBOT_ID }} --project ${{ inputs.REPO_PATH }}
