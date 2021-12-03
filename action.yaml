@@ -5,10 +5,7 @@ name: OSSIBOT Audit
   
 runs:
   using: composite
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
- 
+    steps: 
       # Install OssiBOT
       - name: install ossie bot client
         run: pip3 install ossie
