@@ -12,6 +12,6 @@ runs:
       shell: bash
 
 #     # Audit the Repository
-#     - name: Audit project dependencies
-#       run: ossie audit --id ${{ secrets.OSSIEBOT_ID }} --project ${{ github.repository }}
-#       shell: bash
+    - name: Audit project dependencies
+      run: ossie audit --id ${{ secrets.OSSIEBOT_ID }} --project ${{ github.repository }}
+      shell: bash
