@@ -1,7 +1,9 @@
 # This is a basic workflow to help you get started with Actions
 
 name: OSSIBOT Audit
-  
+input: 
+  OSSIBOT_ID:
+    required: true
 runs:
   using: composite
   steps: 
