@@ -3,7 +3,7 @@
 name: OSSIBOT Audit
   
   
-runs: ubuntu-latest
+runs:
   using: composite
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
