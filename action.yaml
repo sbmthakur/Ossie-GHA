@@ -2,7 +2,7 @@
 
 name: OSSIBOT Audit
 input: 
-  OSSIBOT_ID:
+  OSSIEBOT_ID:
     required: true
 runs:
   using: composite
