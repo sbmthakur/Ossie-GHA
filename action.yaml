@@ -6,4 +6,12 @@ name: OSSIBOT Audit
 runs:
   using: composite
   steps: 
-    - run: echo "hello"
+        # Install OssiBOT
+    - name: install ossie bot client
+      run: pip3 install ossie
+      shell: bash
+
+#     # Audit the Repository
+#     - name: Audit project dependencies
+#       run: ossie audit --id ${{ secrets.OSSIEBOT_ID }} --project ${{ github.repository }}
+#       shell: bash
