@@ -14,5 +14,5 @@ runs:
 
 #     # Audit the Repository
     - name: Audit project dependencies
-      run: ossie audit --id ${{ inputs.OSSIEBOT_ID }} --project ${{ github.repository }}
+      run: ossie audit --id ${{ inputs.OSSIEBOT_ID }} --project ${{ github.workspace }}
       shell: bash
