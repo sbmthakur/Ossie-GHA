@@ -14,8 +14,7 @@ runs:
 
     - name: Check depalert
       run: |
-        ls ${{ github.workspace }}/.depalert &> /dev/null
-        [ $? -eq 0 ] && echo "Depalert file present"
+        (ls ${{ github.workspace }}/.depalert &> /dev/null && echo "deplert exists") || echo "No depalert"
       shell: bash
       
 #     # Audit the Repository
