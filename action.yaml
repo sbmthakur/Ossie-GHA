@@ -19,5 +19,5 @@ runs:
       
 #     # Audit the Repository
     - name: Audit project dependencies
-      run: ossie audit --id ${{ inputs.OSSIEBOT_ID }} --project ${{ github.workspace }}
+      run: ossie audit --id ${{ inputs.OSSIEBOT_ID }} --project ${{ github.workspace }} "depalert"
       shell: bash
