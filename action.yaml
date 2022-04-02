@@ -12,6 +12,12 @@ runs:
       run: pip3 install ossie
       shell: bash
 
+    - name: Check depalert
+      run: |
+        ls ${{ github.workspace }}/.depalert &> /dev/null
+        [ $? -eq 0 ] && echo "Depalert file present"
+      shell: bash
+      
 #     # Audit the Repository
     - name: Audit project dependencies
       run: ossie audit --id ${{ inputs.OSSIEBOT_ID }} --project ${{ github.workspace }}
