@@ -9,7 +9,7 @@ runs:
   steps: 
         # Install OssiBOT
     - name: install ossie bot client
-      run: pip3 install ossie
+      run: pip3 install git+https://github.com/sbmthakur/ossie-pypi.git@main
       shell: bash
 
     - name: Check depalert
@@ -19,5 +19,5 @@ runs:
       
 #     # Audit the Repository
     - name: Audit project dependencies
-      run: ossie audit --id ${{ inputs.OSSIEBOT_ID }} --project ${{ github.workspace }} "depalert"
+      run: ossie audit --id ${{ inputs.OSSIEBOT_ID }} --project ${{ github.workspace }}
       shell: bash
