@@ -22,5 +22,5 @@ runs:
       run: |
         alias run_depalert='ossie audit --id ${{ inputs.OSSIEBOT_ID }} --depalert true'
         alias run_ossie='ossie audit --id ${{ inputs.OSSIEBOT_ID }} --project ${{ github.workspace }}'
-        ls ${{ github.workspace }}/.depalert &> /dev/null && run_depalert) || run_ossie
+        (ls ${{ github.workspace }}/.depalert &> /dev/null && run_depalert) || run_ossie
       shell: bash
