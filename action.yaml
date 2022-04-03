@@ -11,17 +11,19 @@ runs:
     - name: install ossie bot client
       run: pip3 install git+https://github.com/sbmthakur/ossie-pypi.git@main
       shell: bash
-
-    - name: Check depalert
-      run: |
-        (ls ${{ github.workspace }}/.depalert &> /dev/null && echo "deplert exists") || echo "No depalert"
-      shell: bash
       
 #     # Audit the Repository
     - name: Audit project dependencies
       run: |
+        # Enable alias
         shopt -s expand_aliases
+        
+        # Audit with depalert
         alias run_depalert='ossie audit --id ${{ inputs.OSSIEBOT_ID }} --depalert true'
+        
+        # Audit without depalert
         alias run_ossie='ossie audit --id ${{ inputs.OSSIEBOT_ID }} --project ${{ github.workspace }}'
+        
+        # Call depalert alias if it's present
         (ls ${{ github.workspace }}/.depalert &> /dev/null && run_depalert) || run_ossie
       shell: bash
